@@ -2,8 +2,8 @@
 
 #import "@preview/linguify:0.4.2": *
 
-#import "/template/colors.typ": *
-#import "/template/lang.typ": *
+#import "colors.typ": *
+#import "lang.typ": *
 
 #let authors(..authors, styled: false) = {
 

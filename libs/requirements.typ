@@ -4,10 +4,10 @@
 #import "@preview/glossarium:0.5.9": *
 #import "@preview/linguify:0.4.2": *
 
-#import "/template/libs/utils.typ": *
-#import "/template/libs/stringify.typ": *
+#import "libs/utils.typ": *
+#import "libs/stringify.typ": *
 
-#import "/template/lang.typ": *
+#import "lang.typ": *
 
 // ----------------------------------------------------------------------------------
 // Label Registry

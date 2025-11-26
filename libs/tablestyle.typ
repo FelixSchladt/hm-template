@@ -1,6 +1,6 @@
 // Copyright 2024 Felix Schladt https://github.com/FelixSchladt
 
-#import "/template/colors.typ": *
+#import "colors.typ": *
 
 #let styledtable(
   stroke: hm_grey_dark,

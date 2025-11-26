@@ -1,6 +1,6 @@
 // Copyright 2024 Felix Schladt https://github.com/FelixSchladt
 
-#import "/template/lib.typ": *
+#import "lib.typ": *
 
 = Template Usage
 Small guide on the usage of the template and provided items.

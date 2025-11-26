@@ -1,5 +1,3 @@
-// Define your custom colors here
-
 //Red
 #let hm_red = rgb("#fb5555")
 #let hm_red_light = hm_red.lighten(40%)

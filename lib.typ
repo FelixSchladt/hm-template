@@ -1,4 +1,5 @@
-// Copyright 2024 Felix Schladt https://github.com/FelixSchladt
+// Copyright 2024 Danny Seidel https://github.com/DannySeidel
+// Copyright 2025 Felix Schladt https://github.com/FelixSchladt
 
 #import "imports.typ": *
 
@@ -78,14 +79,6 @@
           ],
           align(center)[
             #set align(bottom)
-            // #set text(
-            //   fill: hm_grey_dark,
-            //   weight: "semibold",
-            // )
-            // #let headings = query(heading.where(level: 1))
-            // #if headings.len() > 0 and not headings.any(it => it.location().page() == here().page() - 1) and here().page() > 1{
-            //     hydra(1, skip-starting: true)
-            // }
             #set image(height: 25pt)
             #image("assets/HM_Logo_RGB.png")
           ],
@@ -99,7 +92,6 @@
     }, 
     footer: context{
       //accent_line
-      
       set text(text-size-template)
       grid(
         columns: (1fr, 1fr),
@@ -112,13 +104,6 @@
           ]
           
         ],
-        // align(center)[
-        //   #text(
-        //     fill: hm_grey_dark,
-        //     weight: "semibold",
-        //     title
-        //   )
-        // ],
         align(right)[
           #numbering(
             "1 / 1",
@@ -164,7 +149,6 @@
   set heading(numbering: "1.")
 
   // ----------- Setup Completed - Content ---------------
-
 
   body
 

@@ -2,12 +2,12 @@
 
 #import "@preview/linguify:0.4.2": *
 
-#import "/template/colors.typ": *
-#import "/template/lang.typ": *
+#import "colors.typ": *
+#import "lang.typ": *
 
-#import "/template/libs/tablestyle.typ": *
-#import "/template/libs/requirements.typ": *
-#import "/template/libs/stringify.typ": *
+#import "libs/tablestyle.typ": *
+#import "libs/requirements.typ": *
+#import "libs/stringify.typ": *
 
 #let risk(
   asset,

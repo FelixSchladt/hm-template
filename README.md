@@ -394,8 +394,3 @@ to the backend server during flight.
 ```
 
 This makes it easy to keep traceability between your requirements and the main text.
-
----
-
-This README should give you a starting point for working with the HM Typst Template.  
-Feel free to adapt names, links and small details to match the actual package name and repository layout once everything is final.
