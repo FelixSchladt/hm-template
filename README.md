@@ -387,6 +387,8 @@ The `requirements` helper renders grouped functional and nonfunctional requireme
 
 ```typst
 #requirements(
+  prefix: "SYS",
+  heading-level: 3,
   functional-chapter-description: [
     Functional requirements specify what functionality or behavior
     the resulting product under the specified conditions should have.
@@ -422,16 +424,22 @@ The `requirements` helper renders grouped functional and nonfunctional requireme
 
 Each requirement can include optional `traceability`, `authors`, and `subrequirements` fields.
 
+`prefix` controls the displayed identifiers and label namespace, while
+`heading-level` controls the functional and nonfunctional group headings.
+Top-level identifiers use at least two digits; subrequirements use hierarchical
+numbering such as `SYS-01.1`. If `prefix` is omitted, identifiers use `R` and
+labels remain unscoped, for example `R-01.1` and `req_drone_connectivity`.
+
 Below the rendered block, each requirement is assigned an identifier based on its title. You can reference them from the text like this:
 
-- `@req_Drone_Connectivity`  
-- `@req_functional`  
-- `@req_nonfunctional`
+- `@req_sys_drone_connectivity`
+- `@req_sys_functional`
+- `@req_sys_nonfunctional`
 
 Example sentence:
 
 ```typst
-As specified in @req_Drone_Connectivity the system must maintain a link
+As specified in @req_sys_drone_connectivity the system must maintain a link
 to the backend server during flight.
 ```
 

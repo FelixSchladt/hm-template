@@ -120,6 +120,8 @@ Requirements are grouped into functional and nonfunctional requirements.
   #code(
 ```typ
 #requirements(
+  prefix: "SYS",
+  heading-level: 3,
   functional-chapter-description: [Functional requirements specify what functionality or behavior the resulting product under the specified conditions should have @balzert_lehrbuch_2011.],
   functional: (
     (
@@ -149,6 +151,8 @@ Requirements are grouped into functional and nonfunctional requirements.
 Below, the rendering of the above shown example is visible.
 
 #requirements(
+  prefix: "SYS",
+  heading-level: 3,
   functional-chapter-description: [Functional requirements specify what functionality or behavior the resulting product under the specified conditions should have @balzert_lehrbuch_2011.],
   functional: (
     (
@@ -173,5 +177,5 @@ Below, the rendering of the above shown example is visible.
 )
 
 #set align(bottom)
-Each requirement can be referred to by its requirement id like ```typ @req_drone_connectivity```, @req_drone_connectivity.
-Additional labels exist for ```typ @req_functional``` and ```typ @req_nonfunctional```.
+Each requirement can be referred to by its requirement id like ```typ @req_sys_drone_connectivity```, @req_sys_drone_connectivity.
+Additional labels exist for ```typ @req_sys_functional``` and ```typ @req_sys_nonfunctional```.

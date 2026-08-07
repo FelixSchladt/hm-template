@@ -1,5 +1,11 @@
 # Supercharged-HM Changelog
 
+## Unreleased [v2.0.0]
+
+- Added configurable requirement identifier prefixes and heading levels.
+- Requirement identifiers now use a separator, for example `SYS-01.1` or `R-01.1` when no prefix is provided.
+- Breaking: an explicit prefix scopes requirement and group labels, for example `req_sys_drone_connectivity` and `req_sys_functional`.
+
 ## [v1.1.0] - 2026-07-14
 
 - Fixed requirements references showing heading numbering (e.g. 3.2.2.1) instead of requirement id (e.g. R09).

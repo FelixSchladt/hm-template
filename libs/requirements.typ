@@ -69,6 +69,8 @@
 // ----------------------------------------------------------------------------------
 
 #let requirements(
+  prefix: none,
+  heading-level: 2,
   functional-chapter-description: str,
   functional:    (
     (
@@ -90,6 +92,9 @@
     ),
   )
 ) = {
+  let numbering-prefix = if prefix == none { "R" } else { prefix }
+  let label-prefix = if prefix == none { "" } else { prefix + " " }
+
   let requirement(
     title,
     description,
@@ -104,8 +109,8 @@
     subrequirements: subrequirements
   )
 
-  let get_numbering(prenum, ctr, total_reqs_ctr) = {
-    let ctr_dep = str(total_reqs_ctr).len()
+  let get_numbering(prenum, ctr, total_reqs_ctr, minimum-width: 1) = {
+    let ctr_dep = calc.max(minimum-width, str(total_reqs_ctr).len())
     let ctr_str = str(ctr)
     while (ctr_str.len() != ctr_dep) {
       ctr_str = "0" + ctr_str
@@ -113,22 +118,27 @@
     return prenum + ctr_str
   }
 
-  let display_reqs(reqs, ctr, total_num, prenumbering) = {
+  let display_reqs(reqs, ctr, total_num, prenumbering, minimum-width: 1) = {
     for req in  reqs{
       ctr += 1
-      let numbering = get_numbering(prenumbering, ctr, total_num)
+      let numbering = get_numbering(
+        prenumbering,
+        ctr,
+        total_num,
+        minimum-width: minimum-width,
+      )
 
       // Assign label
-      _add_req_label(req.title)
+      _add_req_label(label-prefix + req.title)
 
       // Display requirement
       context [
-        #show heading.where(level: 4): it => {
+        #show heading.where(level: heading-level + 1): it => {
           block(it.body)
         }
         #set par(justify: false)
         #heading(
-          level: 4,
+          level: heading-level + 1,
           supplement: none,
           numbering: (..nums) => numbering,
           [\[#numbering\] #req.title],
@@ -187,23 +197,35 @@
   let nreqs = convert_to_requirements(nonfunctional)
 
   let ctr = 0
-  for (title, lbl, description, requirements) in (
+  for (title, kind, description, requirements) in (
     (
       linguify("lib_req_func-req", from: lang-db),
-      <req_functional>,
+      "functional",
       functional-chapter-description,
       freqs
     ), (
       linguify("lib_req_nonfunc-req", from: lang-db),
-      <req_nonfunctional>,
+      "nonfunctional",
       non-functional-chapter-description,
       nreqs
     )
   ){
-    [#[== #title] #lbl]
+    [
+      #heading(
+        level: heading-level,
+        title,
+      )
+      #label(_req_label_normalize(label-prefix + kind))
+    ]
     description
 
-    display_reqs(requirements, ctr, nreqs.len() + freqs.len(), "R")
+    display_reqs(
+      requirements,
+      ctr,
+      nreqs.len() + freqs.len(),
+      numbering-prefix + "-",
+      minimum-width: 2,
+    )
 
     ctr+= requirements.len()
   }
