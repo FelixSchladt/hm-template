@@ -331,6 +331,34 @@ Example:
 
 Use these note styles sparingly to keep the document readable.
 
+## Pro/Con Lists
+
+The `pro-list` and `con-list` helpers style native Typst lists with green and red square markers:
+
+```typst
+#pro-list[
+  Native filesystem support.
+][
+  Established development platform.
+]
+
+#con-list[
+  Limited hardware support.
+][
+  Additional licensing costs.
+]
+```
+
+When positive and negative arguments must alternate, `pro-con-list` combines individually marked `pro` and `con` items:
+
+```typst
+#pro-con-list(
+  pro([Native filesystem support.]),
+  con([Limited hardware support.]),
+  pro([Established development platform.]),
+)
+```
+
 ## Tables
 
 For tables, the template provides a styled wrapper `styledtable` around Typst’s `table` function.

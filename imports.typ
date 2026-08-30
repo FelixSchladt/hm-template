@@ -13,6 +13,7 @@
 // Import libs
 #import "libs/codelistings.typ": *
 #import "libs/notes.typ": *
+#import "libs/lists.typ": *
 #import "libs/tablestyle.typ": *
 #import "libs/requirements.typ": *
 #import "libs/utils.typ": *

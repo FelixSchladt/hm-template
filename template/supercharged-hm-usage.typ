@@ -50,6 +50,30 @@ warning-note("Warning note"),
 good-note("Good note"),
 )\
 
+== Pro/Con Lists
+
+The `pro-list` and `con-list` functions apply colored square markers to native Typst lists.
+
+#pro-list[
+  Native filesystem support.
+][
+  Established development platform.
+]
+
+#con-list[
+  Limited hardware support.
+][
+  Additional licensing costs.
+]
+
+The `pro-con-list` function combines positive and negative arguments when their order should be preserved.
+
+#pro-con-list(
+  pro([Native filesystem support.]),
+  con([Limited hardware support.]),
+  pro([Established development platform.]),
+)
+
 == Tables
 
 For tables, a prestyled wrapper function is available, the `styledtable` function, taking a `table` function as an argument. The `stroke`, `background-odd`, and `background-even` parameters can be set to change the table's color appearance.
